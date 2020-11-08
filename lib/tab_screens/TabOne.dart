@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:icon_shadow/icon_shadow.dart';
 
 class TabOne extends StatelessWidget
 {
@@ -24,8 +25,8 @@ class TabOne extends StatelessWidget
                             shape: BoxShape.circle,
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 7,
+                                color: Colors.grey.withOpacity(0.7),
+                                spreadRadius: 10,
                                 blurRadius: 8,
                                 offset: Offset(0, 3),
                               ),
@@ -40,7 +41,8 @@ class TabOne extends StatelessWidget
                             Text("SOS",style: TextStyle(fontSize: 35, color: Colors.white , fontWeight: FontWeight.bold),),
                             IconButton(
                               icon: Icon(Icons.call),
-                              color: Colors.black,
+                              color: Colors.white,
+                              iconSize: 50,
                               tooltip: 'Emergency call on 911',
                               onPressed: _makeaCall,
                             ),
@@ -67,7 +69,7 @@ class TabOne extends StatelessWidget
             right: 0,
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: Text("Call 911 to get emergency help within 10 minutes",style: TextStyle(color: Colors.black),),
+              child: Text("Call 911 to get emergency help within 10 minutes",style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.bold),),
             ),
           ),
         ],
@@ -87,3 +89,10 @@ _makeaCall() async
     throw 'Call Failed';
   }
 }
+/*
+* IconButton(
+                                icon: Icon(Icons.call),
+                                color: Colors.black,
+                                tooltip: 'Emergency call on 911',
+                                onPressed: _makeaCall,
+                              ),*/
